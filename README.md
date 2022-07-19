@@ -10,13 +10,13 @@
 
 ## 步骤：
 
-### 1. 初步了解 ###
-到达up主主页中的“全部视频”页面：https://space.bilibili.com/6272252/video 
-谷歌浏览器按F12在检测工具中的network项中找 earch?mid=6272252&ps=30&tid=0&pn=1&keyword=&order=pubdate&jsonp=jsonp项，可以在它的preview中看到当前服务器反馈的数据，展开data->list->vlist可以看到我们需要的视频信息
+整个爬虫项目我分为前半部分和后半部分，
 
-### 2.获取目标视频的所有信息 ###
+前半部分是：先利用webdriver从up主主页中爬取完整网页，再利用python的re模块和正则表达式获取其中的所有的视频的标题名称、封面图片地址、简介和BV号，把BV号拼成对应视频的网址，保存到tsv文件中
 
-利用python的re模块
+后半部分是：从tsv文件中读取所有视频的标题、网址、图片地址和简介，然后利用pydub进行MP3文件头修改，再高品质地保存音乐。
+
+
 
 
 
